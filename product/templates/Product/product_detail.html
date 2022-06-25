@@ -1,0 +1,218 @@
+
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+     <link rel="stylesheet" href=" {% static 'css/product_detail.css' %}">
+      <link rel="stylesheet" href=" {% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="box-container">
+
+    <div class="box">
+
+        <div class="image-container">
+
+            <div class="big-image">
+                <img src="{{product_detail.PRDImage.url }}" alt="">
+
+            </div>
+            
+            <div class="small-image">
+
+                <img src="{{product_detail.PRDSImage1.url }}" alt="">
+                <img src="{{product_detail.PRDSImage2.url }}" alt="">
+                <img src="{{product_detail.PRDSImage3.url }}" alt="">
+
+            </div>
+
+        </div>
+
+        <div class="content">
+
+            <h3 class="title">{{product_detailPRDName}}</h3>
+            <div class="price">{{product_detail.PRDPrice}}-</div>
+            <h2>{{product_detail.PRDCategory}}</h2>
+
+            <form action="">
+
+                <div class="dropDown">
+                    <p> {{product_detail.PRDDesc}} </p>
+                    <select name="" >
+                        <option value="small">small</option>
+                        <option value="medium">medium</option>
+                        <option value="large">large</option>
+                        <option value="extra large">extra large</option>
+                    </select>
+                    <span> color : </span>
+                    <select name="" id="">
+                        <option value="black">black</option>
+                        <option value="blue">blue</option>
+                        <option value="white">white</option>
+                    </select>
+                </div>
+
+                <div class="quantity">
+                    <span> quantity : </span>
+                    <input type="number" value="1">
+                </div>
+
+            </form>
+
+            <a href="#"><button class="btn"> <i class="fas fa-shopping-cart"></i> add to cart </button></a>
+            <span class="stock"> <i class="fas fa-check"></i> in stock </span>
+            <div class="share">
+                <a href="#">facebook</a>
+                <a href="#">twitter</a>
+                <a href="#">instagram</a>
+                <a href="#">pinterest</a>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- jquery cdn link  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--end featured-->
+        <section class="blog" id="blog">
+            <h1 class="heading">المنتجات المشابهة</h1>
+            <div class="box-container">
+                <div class="box">
+                    <img src="img/team/1.png" alt="">
+                    <h3>Zahra Ahmadi</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Eos sequi temporibus impedit corporis vero ab exercitationem
+                        dolore voluptatibus, nisi non.
+                    </p>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa fa-star"></i>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/team/2.png" alt="">
+                    <h3>Maryam Nazari</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Eos sequi temporibus impedit corporis vero ab exercitationem
+                        dolore voluptatibus, nisi non.
+                    </p>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa fa-star-half-o"></i>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/team/3.png" alt="">
+                    <h3>Layla Akbari</h3>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                        Eos sequi temporibus impedit corporis vero ab exercitationem
+                        dolore voluptatibus, nisi non.
+                    </p>
+                    <div class="stars">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa fa-star-half-o"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $('.small-image img').click(function(){
+
+        $(this).addClass('active').siblings().removeClass('active');
+
+        let image = $(this).attr('src');
+        $('.big-image img').attr('src',image);
+
+    });
+
+});
+
+</script>
+
+
+
+
+
+
+</body>
+</html>
